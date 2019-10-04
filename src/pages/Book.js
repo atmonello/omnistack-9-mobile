@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, SafeAreaView, StyleSheet, TouchableOpacity, AsyncStorage, Alert } from 'react-native';
+import { View, Text, TextInput, SafeAreaView, StyleSheet, TouchableOpacity, AsyncStorage, Alert, StatusBar } from 'react-native';
 
 import api from '../services/api';
 
@@ -26,6 +26,9 @@ export default function Book({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar 
+        barStyle='dark-content'
+      />
       <Text style={styles.label}>DATA DE INTERESSE *</Text>
       <TextInput
         style={styles.input}

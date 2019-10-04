@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, AsyncStorage, KeyboardAvoidingView, Image, Text, TextInput, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, AsyncStorage, KeyboardAvoidingView, Image, Text, TextInput, StyleSheet, TouchableOpacity, Platform, StatusBar } from 'react-native';
 
 import api from '../services/api';
 
@@ -32,6 +32,9 @@ export default function Login({ navigation }) {
 
   return (
     <KeyboardAvoidingView enabled={Platform.OS === 'ios'} behavior="padding" style={styles.container}>
+      <StatusBar 
+        barStyle='dark-content'
+      />
       <Image source={logo} />
 
       <View style={styles.form}>

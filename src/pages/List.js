@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, ScrollView, View, Text, AsyncStorage, Image, StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, View, Text, AsyncStorage, Image, StyleSheet, StatusBar } from 'react-native';
 
 import SpotList from '../components/SpotList';
 import LogoutButton from '../components/LogoutButton';
@@ -17,6 +17,9 @@ export default function List() {
   }, []);
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar 
+        barStyle='dark-content'
+      />
       <View style={styles.header}>
         <Image source={logo} style={styles.logo} />
         <LogoutButton style={styles.logout} />
@@ -36,7 +39,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     position: 'relative',
-    backgroundColor: 'yellow',
     paddingHorizontal: 10
   },
   logo: {
