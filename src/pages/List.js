@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, View, Text, AsyncStorage, Image, StyleSheet } from 'react-native';
 
 import SpotList from '../components/SpotList';
+import LogoutButton from '../components/LogoutButton';
 
 import logo from '../assets/logo.png';
 
@@ -16,7 +17,10 @@ export default function List() {
   }, []);
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={logo} style={styles.logo} />
+      <View style={styles.header}>
+        <Image source={logo} style={styles.logo} />
+        <LogoutButton style={styles.logout} />
+      </View>
       <ScrollView>
         {techs.map((tech, index) => <SpotList key={index} tech={tech} />)}
       </ScrollView>
@@ -28,10 +32,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    position: 'relative',
+    backgroundColor: 'yellow',
+    paddingHorizontal: 10
+  },
   logo: {
     height: 32,
     resizeMode: 'contain',
-    alignSelf: 'center',
-    marginTop: 10
-  }
+    flex: 1,
+  },
 })
